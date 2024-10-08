@@ -15,42 +15,28 @@ if(height % 2 === 0){
 let outline = true;
 let out;
 
-for(i; i < height; i += 2){
-    out = ' '.repeat((height - i) / 2) + '*';
+function starMaker(lineNumber){
+    out = ' '.repeat((height - lineNumber) / 2) + '*';
     if(outline){
-        out += ' '.repeat(i - 2);
+        out += ' '.repeat(lineNumber - 2);
     }else{
-        out += '*'.repeat(i - 2);
+        out += '*'.repeat(lineNumber - 2);
     }
     out += '*';
     console.log(out);
-    // console.log(' '.repeat((height - i) / 2) + '*'.repeat(i));
+}
+
+for(i; i < height; i += 2){
+    starMaker(i);
 }
 
 // TODO optimize this part
 if(height % 2 === 0){
-    let out = '';
-    out += ' '.repeat((height - i) / 2) + '*';
-    if(outline){
-        out += ' '.repeat(i - 2);
-    }else{
-        out += '*'.repeat(i - 2);
-    }
-    out += '*';
-    console.log(out);
-    // console.log(' '.repeat((height - i) / 2) + '*'.repeat(i));
+    starMaker(i);
 }
 
 for(i; i > 2; i -= 2){
-    out = ' '.repeat((height - i) / 2) + '*';
-    if(outline){
-        out += ' '.repeat(i - 2);
-    }else{
-        out += '*'.repeat(i - 2);
-    }
-    out += '*';
-    console.log(out);
-    // console.log(' '.repeat((height - i) / 2) + '*'.repeat(i));
+    starMaker(i);
 }
 if(height % 2 === 0){
     console.log(' '.repeat((height - 1) / 2) + '**');
